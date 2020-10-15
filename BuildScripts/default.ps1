@@ -317,7 +317,7 @@ function PackDirectory($path, [switch]$AddReleaseNotes){
                    $nuspec.package.metadata.ReplaceChild($newReleaseNotes, $oldReleaseNotes) | Out-Null
                    $nuspec.Save($_)
                  }
-                 .$nugetExe pack $_ -OutputDirectory $path -NoPackageAnalysis -version $version
+                 choco pack $_ --OutputDirectory $path --version $version
               }
     }
 }
